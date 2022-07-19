@@ -21,7 +21,7 @@ function App() {
   };
 
   React.useEffect(() => {
-    fetch("http://localhost:40001/")
+    fetch("https://billdatabackend.herokuapp.com/")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

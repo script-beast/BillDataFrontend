@@ -17,7 +17,7 @@ function App(props) {
 
   React.useEffect(() => {
     if (id) {
-      fetch(`http://localhost:40001/${id}`)
+      fetch(`https://billdatabackend.herokuapp.com/${id}`)
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -39,7 +39,7 @@ function App(props) {
     e.preventDefault();
     console.log(formData);
     if (props.type === "Add") {
-      fetch("http://localhost:40001", {
+      fetch("https://billdatabackend.herokuapp.com/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -57,7 +57,7 @@ function App(props) {
         .catch((err) => console.log(err));
     }
     if (props.type === "Update") {
-      fetch(`http://localhost:40001/${id}/edit`, {
+      fetch(`https://billdatabackend.herokuapp.com/${id}/edit`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

@@ -9,7 +9,7 @@ function App() {
   const { id } = useParams();
 
   React.useEffect(() => {
-    fetch(`http://localhost:40001/${id}`)
+    fetch(`https://billdatabackend.herokuapp.com/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   const handleDelete = () => {
-    fetch(`http://localhost:40001/delete/${id}`, {
+    fetch(`https://billdatabackend.herokuapp.com/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
