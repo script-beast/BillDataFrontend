@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "react": "^18.0.0",
-    "react-datepicker": "^4npm.8.0",
+    "react-datepicker": "^4.8.0",
     "react-dom": "^18.0.0",
     "react-pagination-library": "^0.1.14",
     "react-router-dom": "^6.3.0"
