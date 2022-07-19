@@ -1,0 +1,62 @@
+body {
+  font-family: "lato", sans-serif;
+  background: hsl(204 100% 5%);
+  margin: 0;
+  padding: 0;
+}
+
+.basicHeading {
+  background: linear-gradient(to right, hsl(98 100% 62%), hsl(204 100% 59%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+}
+
+.frame {
+  width: 90%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.custom-btn {
+  margin: 20px;
+  outline: none;
+  width: 130px;
+  height: 40px;
+  padding: 10px 25px;
+  border: 2px solid rgb(255, 255, 255);
+  font-weight: 500;
+  background: transparent !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+/* button */
+.btn-15 {
+  background: #000;
+  color: #fff;
+}
+.btn-15:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background: #e0e5ec;
+  transition: all 0.3s ease;
+}
+.btn-15:hover {
+  color: #000;
+}
+.btn-15:hover:after {
+  left: 0;
+  width: 100%;
+}
+.btn-15:active {
+  top: 2px;
+}

@@ -1,0 +1,126 @@
+body {
+  font-family: "lato", sans-serif;
+}
+
+.homeContainer {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.homeTable li {
+  border-radius: 3px;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  text-align: center;
+}
+.homeTable .homeTable-header {
+  background-color: #95a5a6;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.homeTable .homeTable-row {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+}
+
+.homeTable .homeCol {
+  flex-basis: 25%;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+.pagination li {
+  display: inline-block;
+  margin: 0.01rem;
+  color: white;
+}
+
+.tablelink {
+  color: #000;
+  text-decoration: none;
+}
+
+/* button */
+.homebtn {
+  background-color: hsl(204 100% 5%);
+  position: relative;
+  width: 80px;
+  height: 30px;
+  margin: auto 20px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  border: 1px solid #ec1840;
+  color: #ffffff;
+  
+}
+
+.homebtn:hover {
+  border: 1px solid transparent;
+  background: #ec1840 url(https://i.postimg.cc/wBXGXbWN/pixel.png);
+  transition-delay: 0.8s;
+  background-size: 180px;
+  -webkit-animation: animate 0.8s steps(8) forwards;
+  animation: animate 0.8s steps(8) forwards;
+}
+.sortbutton {
+  border: 1px solid #7a18ec;
+}
+.sortbutton:hover {
+  background: #7a18ec url(https://i.postimg.cc/FzBWFtKM/pixel2.png);
+}
+
+@-webkit-keyframes animate {
+  0% {
+    background-position-y: 0;
+  }
+  100% {
+    background-position-y: -480px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-y: 0;
+  }
+  100% {
+    background-position-y: -480px;
+  }
+}
+
+/* media query */
+@media all and (max-width: 767px) {
+  .homeTable .homeTable-header {
+    display: none;
+  }
+  .homeTable li {
+    display: block;
+  }
+  .homeTable .homeCol {
+    flex-basis: 100%;
+  }
+  .homeTable .homeCol {
+    display: flex;
+    padding: 10px 0;
+  }
+  .homeTable .homeCol:before {
+    color: #6c7a89;
+    padding-right: 10px;
+    content: attr(data-label);
+    flex-basis: 50%;
+    text-align: right;
+  }
+
+  .homebtn {
+    margin: 20px;
+  }
+}
