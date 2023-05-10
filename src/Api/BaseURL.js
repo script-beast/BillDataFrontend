@@ -1,3 +1,3 @@
-const BaseURL = "https://mybilldataapp.onrender.com/"
+const BaseURL = "https://mybilldataapp.onrender.com"
 
 export default BaseURL;
