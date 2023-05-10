@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import ReactPaginate from "react-pagination-library";
 import "react-pagination-library/build/css/index.css";
 
+import BaseURL from "../../Api/BaseURL";
+
 function App() {
   const [pageNumer, setPageNumer] = React.useState(1);
   const [array, setArray] = React.useState([]);
@@ -21,7 +23,7 @@ function App() {
   };
 
   React.useEffect(() => {
-    fetch("https://billdatabackend.herokuapp.com/")
+    fetch(BaseURL)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

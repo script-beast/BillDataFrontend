@@ -4,6 +4,8 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
 import "./style.css";
 
+import BaseURL from "../../Api/BaseURL";
+
 function App(props) {
   const [formData, setFormData] = React.useState({
     billDate: new Date(),
@@ -17,7 +19,7 @@ function App(props) {
 
   React.useEffect(() => {
     if (id) {
-      fetch(`https://billdatabackend.herokuapp.com/${id}`)
+      fetch(`${BaseURL}/${id}`)
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -39,7 +41,7 @@ function App(props) {
     e.preventDefault();
     console.log(formData);
     if (props.type === "Add") {
-      fetch("https://billdatabackend.herokuapp.com/", {
+      fetch(BaseURL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -57,7 +59,7 @@ function App(props) {
         .catch((err) => console.log(err));
     }
     if (props.type === "Update") {
-      fetch(`https://billdatabackend.herokuapp.com/${id}/edit`, {
+      fetch(BaseURL + `/${id}/edit`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -77,17 +79,16 @@ function App(props) {
   };
 
   const handleback = () => {
-    if(props.type === "Add"){
+    if (props.type === "Add") {
       navigate("/");
     }
-    if(props.type === "Update"){
+    if (props.type === "Update") {
       navigate(`/bill/${id}`);
     }
-  }
+  };
 
   return (
     <div className="login-box">
-      
       <h2>{props.type} Details</h2>
       <div>
         <div className="user-box">
@@ -114,7 +115,10 @@ function App(props) {
             value={formData.unitConsumed}
             min="0"
             onChange={(e) =>
-              setFormData({ ...formData, unitConsumed: e.target.value < 0 ? 0 : e.target.value })
+              setFormData({
+                ...formData,
+                unitConsumed: e.target.value < 0 ? 0 : e.target.value,
+              })
             }
             required
           />
@@ -126,7 +130,10 @@ function App(props) {
             value={formData.amount}
             min="0"
             onChange={(e) =>
-              setFormData({ ...formData, amount: e.target.value < 0 ? 0 : e.target.value })
+              setFormData({
+                ...formData,
+                amount: e.target.value < 0 ? 0 : e.target.value,
+              })
             }
           />
           <label>Amount</label>
@@ -139,8 +146,12 @@ function App(props) {
           {props.type}
         </a>
         <button
-        onClick={handleback}
-         style={{top: "-17px"}} class="custom-btn btn-15">Go Back</button>
+          onClick={handleback}
+          style={{ top: "-17px" }}
+          class="custom-btn btn-15"
+        >
+          Go Back
+        </button>
       </div>
     </div>
   );

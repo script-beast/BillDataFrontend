@@ -2,6 +2,8 @@ import React from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import "./style.css";
 
+import BaseURL from "../../Api/BaseURL";
+
 function App() {
   const [data, setData] = React.useState({});
 
@@ -9,7 +11,7 @@ function App() {
   const { id } = useParams();
 
   React.useEffect(() => {
-    fetch(`https://billdatabackend.herokuapp.com/${id}`)
+    fetch(`${BaseURL}/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -22,7 +24,7 @@ function App() {
   }, []);
 
   const handleDelete = () => {
-    fetch(`https://billdatabackend.herokuapp.com/delete/${id}`, {
+    fetch(BaseURL + `/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
